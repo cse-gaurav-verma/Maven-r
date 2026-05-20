@@ -276,7 +276,10 @@ public class SnakeGame extends JPanel implements ActionListener {
     }
 
     public static void main(String[] args) {
-
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("Running in Jenkins headless mode.");
+            return;
+        }
         JFrame frame = new JFrame();
 
         SnakeGame gamePanel = new SnakeGame();
